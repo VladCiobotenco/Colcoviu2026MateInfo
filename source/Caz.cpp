@@ -1,5 +1,7 @@
 #include "../include/Caz.h"
 
+#include "../include/Exceptions.h"
+
 Caz::Caz(int nr_matricol, examinare tip_examinare, const std::string &nume):
     nr_matricol(nr_matricol),
     tip_examinare(tip_examinare),
@@ -46,7 +48,7 @@ void Caz::addFapta(const std::shared_ptr<Fapta>& fapta) {
 float Caz::getSeveritateBaza() const {
 
     if (fapte_sus.empty()) {
-        throw std::runtime_error("Impartire la 0!");
+        throw Exceptii_definite("Impartire la 0!");
     }
 
     float sev=0;

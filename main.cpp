@@ -34,7 +34,7 @@ try {
 
     Fapta_info fapta2info({"git"},sursa::Internet);
     const std::shared_ptr<Fapta> fapta4 = std::make_shared<Fapta_info>(fapta2info);
-    app.addFapta(2,fapta4);
+    //app.addFapta(2,fapta4);
 
     app.displayCazSev();
 

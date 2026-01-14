@@ -29,4 +29,5 @@ add_executable(Colcoviu2026MateInfo main.cpp
         source/Comisie.cpp
         include/Comisie.h
         source/Persoana_factory.cpp
-        include/Persoana_factory.h)
+        include/Persoana_factory.h
+        include/Exceptions.h)

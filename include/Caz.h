@@ -1,7 +1,10 @@
 #pragma once
+#include <iostream>
 #include <memory>
 #include <ostream>
 #include <string>
+
+#include "Exceptions.h"
 #include "Fapta.h"
 
 enum class examinare {
@@ -37,6 +40,15 @@ public:
     float getSeveritateBaza()const;
 
     friend std::ostream & operator<<(std::ostream &os, const Caz &obj) {
-        return os << "id: " << obj.id<< " "<<obj.getSeveritateBaza();
+        try {
+            auto sev = obj.getSeveritateBaza();
+            return os << "id: " << obj.id<< " "<<sev;
+        }
+        catch (Exceptii_definite& e) {
+            std::cout<<e.what()<<std::endl;
+            return os << "id: " << obj.id<< " "<<0;
+        }
+
+
     }
 };
