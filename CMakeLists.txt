@@ -26,4 +26,7 @@ add_executable(Colcoviu2026MateInfo main.cpp
         source/Consult_extern.cpp
         include/App.h
         source/App.cpp
-        include/Fapta_factory.h)
+        source/Comisie.cpp
+        include/Comisie.h
+        source/Persoana_factory.cpp
+        include/Persoana_factory.h)

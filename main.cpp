@@ -1,9 +1,13 @@
 #include <iostream>
 
 #include "include/App.h"
+#include "include/Cadru_didactic.h"
+#include "include/Decan.h"
 #include "include/Fapta_asis.h"
 #include "include/Fapta_com.h"
 #include "include/Fapta_info.h"
+#include "include/Persoana_factory.h"
+#include "include/Repr_asociatie.h"
 
 using namespace std;
 
@@ -33,6 +37,14 @@ try {
     app.addFapta(2,fapta4);
 
     app.displayCazSev();
+
+    auto pers1 = Persoana_factory::createDecan("Mircea");
+    auto pers2 = Persoana_factory::createCadruDidactic("Dranga",20);
+    Comisie comisia1({pers1,pers2});
+    app.addComisie(comisia1);
+
+
+
 }
     catch (std::runtime_error& e) {
         std::cout << e.what() << std::endl;
