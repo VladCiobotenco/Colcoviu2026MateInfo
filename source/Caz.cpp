@@ -43,4 +43,17 @@ void Caz::addFapta(const std::shared_ptr<Fapta>& fapta) {
     fapte_sus.push_back(fapta);
 }
 
+float Caz::getSeveritateBaza() const {
+
+    if (fapte_sus.empty()) {
+        throw std::runtime_error("Impartire la 0!");
+    }
+
+    float sev=0;
+    for (const auto& fapta: fapte_sus) {
+        sev+=fapta->getSeveritate();
+    }
+    return sev/static_cast<float>(fapte_sus.size());
+}
+
 int Caz::count = 1;

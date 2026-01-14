@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+#include <ostream>
 #include <string>
 #include "Fapta.h"
 
@@ -33,4 +34,9 @@ public:
     int getId() const;
     static std::string to_string(examinare e);
     void addFapta(const std::shared_ptr<Fapta>& fapta);
+    float getSeveritateBaza()const;
+
+    friend std::ostream & operator<<(std::ostream &os, const Caz &obj) {
+        return os << "id: " << obj.id<< " "<<obj.getSeveritateBaza();
+    }
 };

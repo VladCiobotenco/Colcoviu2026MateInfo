@@ -23,7 +23,14 @@ void App::addCaz(const Caz& caz) {
     cazuri.insert({caz.getId(),std::make_shared<Caz>(caz)});
 }
 
-void App::addFapta(std::string, int id, const std::shared_ptr<Fapta>& fapta) const {
+void App::addFapta(int id, const std::shared_ptr<Fapta>& fapta) const {
     const auto caz = cazuri.at(id);
     caz->addFapta(fapta);
 }
+
+void App::displayCazSev() const {
+    for (const auto& pair: cazuri) {
+        std::cout<<*pair.second<<"\n";
+    }
+}
+
